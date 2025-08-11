@@ -37,21 +37,23 @@ It automates the entire process — from downloading the video to generating CSV
 ```bash
 git clone https://github.com/yourusername/traffic-flow-analysis.git
 cd traffic-flow-analysis
+```
 
 ### 2️. Create Virtual Environment (Windows)
 ```bash
 python -m venv venv
 venv\Scripts\activate
-
+```
 ### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
-
+```
 ### 4. Execution Instructions
 Run Entire Pipeline
-Run the entire workflow (download → trim → process → verify) with a ```bash
+Run the entire workflow (download → trim → process → verify) with a 
+```bash
 python run_all.py
-
+```
 This will:
 1. Install dependencies from requirements.txt
 2. Download the full traffic video
@@ -60,4 +62,6 @@ This will:
 5. Verify lane assignments & save sample frames (varify_counts.py)
 
 A full log will be saved in:
+```bash
 run_pipeline.log
+```
