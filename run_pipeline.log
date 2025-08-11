@@ -1,0 +1,193 @@
+=== Traffic Flow Automation Log ===
+[2025-08-11 14:09:20] #### Starting full pipeline run ####
+[2025-08-11 14:09:20] --- Starting: Install dependencies ---
+[2025-08-11 14:09:22] Requirement already satisfied: ultralytics in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from -r requirements.txt (line 1)) (8.3.176)
+Requirement already satisfied: opencv-python in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from -r requirements.txt (line 2)) (4.12.0.88)
+Requirement already satisfied: pandas in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from -r requirements.txt (line 3)) (2.3.1)
+Requirement already satisfied: filterpy in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from -r requirements.txt (line 4)) (1.4.5)
+Requirement already satisfied: scipy in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from -r requirements.txt (line 5)) (1.16.1)
+Requirement already satisfied: yt-dlp in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from -r requirements.txt (line 6)) (2025.7.21)
+Requirement already satisfied: ffmpeg-python in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from -r requirements.txt (line 7)) (0.2.0)
+Requirement already satisfied: numpy>=1.23.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (2.2.6)
+Requirement already satisfied: matplotlib>=3.3.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (3.10.5)
+Requirement already satisfied: pillow>=7.1.2 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (11.3.0)
+Requirement already satisfied: pyyaml>=5.3.1 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (6.0.2)
+Requirement already satisfied: requests>=2.23.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (2.32.4)
+Requirement already satisfied: torch>=1.8.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (2.8.0)
+Requirement already satisfied: torchvision>=0.9.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (0.23.0)
+Requirement already satisfied: tqdm>=4.64.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (4.67.1)
+Requirement already satisfied: psutil in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (7.0.0)
+Requirement already satisfied: py-cpuinfo in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (9.0.0)
+Requirement already satisfied: ultralytics-thop>=2.0.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ultralytics->-r requirements.txt (line 1)) (2.0.15)
+Requirement already satisfied: python-dateutil>=2.8.2 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from pandas->-r requirements.txt (line 3)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from pandas->-r requirements.txt (line 3)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from pandas->-r requirements.txt (line 3)) (2025.2)
+Requirement already satisfied: future in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from ffmpeg-python->-r requirements.txt (line 7)) (1.0.0)
+Requirement already satisfied: contourpy>=1.0.1 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from matplotlib>=3.3.0->ultralytics->-r requirements.txt (line 1)) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from matplotlib>=3.3.0->ultralytics->-r requirements.txt (line 1)) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from matplotlib>=3.3.0->ultralytics->-r requirements.txt (line 1)) (4.59.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from matplotlib>=3.3.0->ultralytics->-r requirements.txt (line 1)) (1.4.8)
+Requirement already satisfied: packaging>=20.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from matplotlib>=3.3.0->ultralytics->-r requirements.txt (line 1)) (25.0)
+Requirement already satisfied: pyparsing>=2.3.1 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from matplotlib>=3.3.0->ultralytics->-r requirements.txt (line 1)) (3.2.3)
+Requirement already satisfied: six>=1.5 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 3)) (1.17.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from requests>=2.23.0->ultralytics->-r requirements.txt (line 1)) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from requests>=2.23.0->ultralytics->-r requirements.txt (line 1)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from requests>=2.23.0->ultralytics->-r requirements.txt (line 1)) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from requests>=2.23.0->ultralytics->-r requirements.txt (line 1)) (2025.8.3)
+Requirement already satisfied: filelock in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (3.18.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (4.14.1)
+Requirement already satisfied: sympy>=1.13.3 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (1.14.0)
+Requirement already satisfied: networkx in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (3.5)
+Requirement already satisfied: jinja2 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: fsspec in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (2025.7.0)
+Requirement already satisfied: setuptools in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (80.9.0)
+Requirement already satisfied: colorama in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from tqdm>=4.64.0->ultralytics->-r requirements.txt (line 1)) (0.4.6)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from sympy>=1.13.3->torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\asus\downloads\traffic flow analysis\venv\lib\site-packages (from jinja2->torch>=1.8.0->ultralytics->-r requirements.txt (line 1)) (3.0.2)
+
+[2025-08-11 14:09:22] ERROR/WARNING: 
+[notice] A new release of pip is available: 24.2 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+[2025-08-11 14:09:22] --- Finished: Install dependencies ---
+
+[2025-08-11 14:09:22] --- Starting: Download full video ---
+[2025-08-11 14:09:29] [youtube] Extracting URL: https://www.youtube.com/watch?v=MNn9qKG2UFI
+Starting full download from https://www.youtube.com/watch?v=MNn9qKG2UFI...
+[youtube] MNn9qKG2UFI: Downloading webpage
+[youtube] MNn9qKG2UFI: Downloading tv client config
+[youtube] MNn9qKG2UFI: Downloading tv player API JSON
+[youtube] MNn9qKG2UFI: Downloading ios player API JSON
+[youtube] MNn9qKG2UFI: Downloading m3u8 information
+[info] MNn9qKG2UFI: Downloading 1 format(s): 18
+[download] Destination: traffic_video_full.mp4
+
+[download]   0.0% of   20.91MiB at  917.99KiB/s ETA 00:23
+[download]   0.0% of   20.91MiB at  967.32KiB/s ETA 00:22
+[download]   0.0% of   20.91MiB at    1.54MiB/s ETA 00:13
+[download]   0.1% of   20.91MiB at    2.69MiB/s ETA 00:07
+[download]   0.1% of   20.91MiB at    4.54MiB/s ETA 00:04
+[download]   0.3% of   20.91MiB at    5.81MiB/s ETA 00:03
+[download]   0.6% of   20.91MiB at    2.04MiB/s ETA 00:10
+[download]   1.2% of   20.91MiB at    2.57MiB/s ETA 00:08
+[download]   2.4% of   20.91MiB at    4.11MiB/s ETA 00:04
+[download]   4.8% of   20.91MiB at    6.47MiB/s ETA 00:03
+[download]   9.6% of   20.91MiB at    8.87MiB/s ETA 00:02
+[download]  19.1% of   20.91MiB at   11.25MiB/s ETA 00:01
+[download]  38.3% of   20.91MiB at   13.60MiB/s ETA 00:00
+[download]  47.1% of   20.91MiB at   14.20MiB/s ETA 00:00
+[download]  47.1% of   20.91MiB at  Unknown B/s ETA Unknown
+[download]  47.1% of   20.91MiB at    2.70MiB/s ETA 00:04  
+[download]  47.1% of   20.91MiB at    3.13MiB/s ETA 00:03
+[download]  47.1% of   20.91MiB at    1.26MiB/s ETA 00:08
+[download]  47.2% of   20.91MiB at    2.39MiB/s ETA 00:04
+[download]  47.4% of   20.91MiB at    3.18MiB/s ETA 00:03
+[download]  47.7% of   20.91MiB at    3.98MiB/s ETA 00:02
+[download]  48.3% of   20.91MiB at    5.59MiB/s ETA 00:01
+[download]  49.5% of   20.91MiB at    8.18MiB/s ETA 00:01
+[download]  51.9% of   20.91MiB at   11.13MiB/s ETA 00:00
+[download]  56.6% of   20.91MiB at   12.78MiB/s ETA 00:00
+[download]  66.2% of   20.91MiB at   13.07MiB/s ETA 00:00
+[download]  85.3% of   20.91MiB at   12.82MiB/s ETA 00:00
+[download]  94.4% of   20.91MiB at   13.23MiB/s ETA 00:00
+[download]  94.4% of   20.91MiB at  913.59KiB/s ETA 00:01
+[download]  94.4% of   20.91MiB at    2.68MiB/s ETA 00:00
+[download]  94.5% of   20.91MiB at    3.14MiB/s ETA 00:00
+[download]  94.5% of   20.91MiB at    1.23MiB/s ETA 00:00
+[download]  94.6% of   20.91MiB at    2.34MiB/s ETA 00:00
+[download]  94.7% of   20.91MiB at    2.95MiB/s ETA 00:00
+[download]  95.0% of   20.91MiB at    4.43MiB/s ETA 00:00
+[download]  95.6% of   20.91MiB at    6.54MiB/s ETA 00:00
+[download]  96.8% of   20.91MiB at    8.74MiB/s ETA 00:00
+[download]  99.2% of   20.91MiB at   10.82MiB/s ETA 00:00
+[download] 100.0% of   20.91MiB at   11.43MiB/s ETA 00:00
+[download] 100% of   20.91MiB in 00:00:01 at 12.00MiB/s  
+### Download complete: traffic_video_full.mp4
+
+[2025-08-11 14:09:29] ERROR/WARNING: WARNING: [youtube] MNn9qKG2UFI: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+
+[2025-08-11 14:09:29] --- Finished: Download full video ---
+
+[2025-08-11 14:09:29] --- Starting: Trim video to short clip ---
+[2025-08-11 14:09:29] ### Trimming first 120 seconds from traffic_video_full.mp4...
+### Trim complete! Saved to 'traffic_video.mp4'
+
+[2025-08-11 14:09:29] ERROR/WARNING: ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'traffic_video_full.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    creation_time   : 2024-09-13T07:43:04.000000Z
+    encoder         : Google
+  Duration: 00:05:06.16, start: 0.000000, bitrate: 572 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 640x360 [SAR 1:1 DAR 16:9], 440 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+      Metadata:
+        creation_time   : 2024-09-13T07:43:04.000000Z
+        handler_name    : ISO Media file produced by Google Inc. Created on: 09/13/2024.
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 127 kb/s (default)
+      Metadata:
+        creation_time   : 2024-09-13T07:43:04.000000Z
+        handler_name    : ISO Media file produced by Google Inc. Created on: 09/13/2024.
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (copy)
+  Stream #0:1 -> #0:1 (copy)
+Output #0, mp4, to 'traffic_video.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 640x360 [SAR 1:1 DAR 16:9], q=2-31, 440 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+      Metadata:
+        creation_time   : 2024-09-13T07:43:04.000000Z
+        handler_name    : ISO Media file produced by Google Inc. Created on: 09/13/2024.
+        vendor_id       : [0][0][0][0]
+  Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 127 kb/s (default)
+      Metadata:
+        creation_time   : 2024-09-13T07:43:04.000000Z
+        handler_name    : ISO Media file produced by Google Inc. Created on: 09/13/2024.
+        vendor_id       : [0][0][0][0]
+Press [q] to stop, [?] for help
+[out#0/mp4 @ 0000011292f21380] video:6525KiB audio:1875KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.444950%
+frame= 3601 fps=0.0 q=-1.0 Lsize=    8522KiB time=00:02:00.03 bitrate= 581.6kbits/s speed=5.01e+03x    
+
+[2025-08-11 14:09:29] --- Finished: Trim video to short clip ---
+
+[2025-08-11 14:09:29] --- Starting: Traffic flow detection & counting ---
+[2025-08-11 14:14:52] 
+--- Final Vehicle Counts ---
+Lane 1: 193 vehicles
+Lane 2: 90 vehicles
+Lane 3: 14 vehicles
+
+[2025-08-11 14:14:52] --- Finished: Traffic flow detection & counting ---
+
+[2025-08-11 14:14:52] --- Starting: Verify lane assignments ---
+[2025-08-11 14:14:55] === QUICK SUMMARY ===
+Total rows in CSV: 297
+Unique Vehicle IDs: 297
+Counts per lane (rows): {1: 193, 2: 90, 3: 14}
+Vehicles assigned to multiple lanes: 0
+======================
+
+Saving 12 sample frames for manual inspection to 'verify_samples'
+
+Saved 12 sample images to verify_samples
+Saved summary CSV: verify_samples\first_appear_summary.csv
+
+[2025-08-11 14:14:55] --- Finished: Verify lane assignments ---
+
+[2025-08-11 14:14:55] #### Pipeline complete. All logs saved to run_pipeline.log####

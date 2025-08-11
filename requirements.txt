@@ -1,0 +1,7 @@
+ultralytics
+opencv-python
+pandas
+filterpy
+scipy
+yt-dlp
+ffmpeg-python
